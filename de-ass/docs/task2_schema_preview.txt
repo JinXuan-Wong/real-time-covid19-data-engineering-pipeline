@@ -1,0 +1,65 @@
+25/08/12 21:53:01 WARN Utils: Your hostname, ZGMF-X666S.localdomain resolves to a loopback address: 127.0.1.1; using 10.255.255.254 instead (on interface lo)
+25/08/12 21:53:01 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /___/ .__/\_,_/_/ /_/\_\   version 3.5.1
+      /_/
+         
+Using Scala version 2.13.8 (OpenJDK 64-Bit Server VM, Java 1.8.0_452)
+Type in expressions to have them evaluated.
+Type :help for more information.
+25/08/12 21:53:02 WARN jline: Unable to create a system terminal, creating a dumb terminal (enable debug logging for more information)
+25/08/12 21:53:05 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/08/12 21:53:06 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+Spark context Web UI available at http://10.255.255.254:4041
+Spark context available as 'sc' (master = local[*], app id = local-1755006786845).
+Spark session available as 'spark'.
+
+scala> val df = spark.read.parquet("hdfs://localhost:9000/user/student/covid19/processed")[Stage 0:>                                                          (0 + 1) / 1]                                                                                val df: org.apache.spark.sql.DataFrame = [country: string, continent: string ... 19 more fields]
+
+scala> df.printSchema()root
+ |-- country: string (nullable = true)
+ |-- continent: string (nullable = true)
+ |-- cases: long (nullable = true)
+ |-- todayCases: long (nullable = true)
+ |-- deaths: long (nullable = true)
+ |-- todayDeaths: long (nullable = true)
+ |-- recovered: long (nullable = true)
+ |-- active: long (nullable = true)
+ |-- critical: long (nullable = true)
+ |-- tests: long (nullable = true)
+ |-- population: long (nullable = true)
+ |-- casesPerOneMillion: double (nullable = true)
+ |-- deathsPerOneMillion: double (nullable = true)
+ |-- updated: long (nullable = true)
+ |-- event_ts: timestamp (nullable = true)
+ |-- updated_ts: timestamp (nullable = true)
+ |-- cases_per_million: double (nullable = true)
+ |-- deaths_per_million: double (nullable = true)
+ |-- tests_per_thousand: double (nullable = true)
+ |-- region: string (nullable = true)
+ |-- event_date: date (nullable = true)
+
+
+scala> df.select("country","cases","deaths","cases_per_million","event_date").show(10, false)[Stage 1:>                                                          (0 + 1) / 1]                                                                                +-------------------+--------+------+-----------------+----------+
+|country            |cases   |deaths|cases_per_million|event_date|
++-------------------+--------+------+-----------------+----------+
+|Afghanistan        |234174  |7996  |5745.98          |2025-08-12|
+|Albania            |334863  |3605  |116824.6         |2025-08-12|
+|Andorra            |48015   |165   |619844.31        |2025-08-12|
+|Angola             |107327  |1937  |3064.09          |2025-08-12|
+|Anguilla           |3904    |12    |256336.18        |2025-08-12|
+|Antigua And Barbuda|9106    |146   |91509.31         |2025-08-12|
+|Argentina          |10128845|130841|220143.31        |2025-08-12|
+|Armenia            |451831  |8777  |152031.01        |2025-08-12|
+|Aruba              |44224   |292   |410969.34        |2025-08-12|
+|Australia          |11853144|24414 |454687.12        |2025-08-12|
++-------------------+--------+------+-----------------+----------+
+only showing top 10 rows
+
+
+scala> System.exit(0)

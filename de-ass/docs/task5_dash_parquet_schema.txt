@@ -1,0 +1,17 @@
+country: string
+region: string not null
+cases: int64
+deaths: int64
+tests: int64
+population: int64
+cases_per_million: double
+deaths_per_million: double
+tests_per_thousand: double
+latitude: double
+longitude: double
+event_ts: timestamp[ns]
+event_date: string
+flag_url: string
+-- schema metadata --
+org.apache.spark.version: '3.5.1'
+org.apache.spark.sql.parquet.row.metadata: '{"type":"struct","fields":[{"' + 942
