@@ -48,3 +48,6 @@ Thumbs.db
 # =========================
 *.env
 .env.*
+
+# Ignore internal technical README
+de-ass/README.md
