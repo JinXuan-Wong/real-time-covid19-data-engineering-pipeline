@@ -413,30 +413,35 @@ These are lightweight CSV samples only. The full production data is stored in HD
 ---
 
 ## 📊 Sample Outputs
-### Example Visual Outputs
 
-#### Task 1 — Raw and checkpoint storage
+### 🔹 Task 1 — Raw & Checkpoint Storage
+These outputs show the ingestion layer where raw data is stored in HDFS.
 
-- docs/task1_raw_dir.png
-- docs/task1_checkpoint_dir.png
+![Task 1 Raw Data](de-ass/docs/task1_raw_dir.png)
+![Task 1 Checkpoint](de-ass/docs/task1_checkpoint_dir.png)
 
-#### Task 3 — MongoDB analytics
+---
 
-- docs/task3_health_strain.png
-- docs/task3_blind_spots_positivity.png
+### 🔹 Task 3 — MongoDB Analytics
+These visualizations demonstrate analytical insights generated from processed data stored in MongoDB.
 
-#### Task 4 — Neo4j graph analytics
+![Task 3 Health Strain](de-ass/docs/task3_health_strain.png)
+![Task 3 Blind Spots Positivity](de-ass/docs/task3_blind_spots_positivity.png)
 
-- docs/task4_top_cases_per_million.png
-- docs/task4_testing_gap.png
+---
 
-#### Task 5 — Dashboard output
+### 🔹 Task 4 — Neo4j Graph Analytics
+Graph-based analysis highlighting relationships and trends across countries.
 
-- docs/task5_dashboard_screenshot.png
+![Task 4 Top Cases per Million](de-ass/docs/task4_top_cases_per_million.png)
+![Task 4 Testing Gap](de-ass/docs/task4_testing_gap.png)
 
-![Task 3 Health Strain Analysis](docs/task3_health_strain.png)
-![Task 4 Top Cases per Million](docs/task4_top_cases_per_million.png)
-![Task 5 Dashboard](docs/task5_dashboard_screenshot.png)
+---
+
+### 🔹 Task 5 — Dashboard Output
+Real-time dashboard displaying streaming COVID-19 analytics.
+
+![Task 5 Dashboard](de-ass/docs/task5_dashboard_screenshot.png)
 
 ---
 
